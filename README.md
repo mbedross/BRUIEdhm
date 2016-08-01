@@ -50,3 +50,12 @@ After establishing a UDP connection with BRUIE, it will 'export' all necessary G
 
 -
 
+7. This scripts reads the voltage across the termistor and calculates the temperature of the sample by using the Steinhart-Hart Equation. More information on the wiring schematic of the termistor setup can be found in the 'supp.materials' branch. This script is called when the 'DHM_status', 'DHM_record', 'DHM_auto', or 'DHM_newSample' commands are received.
+
+-
+
+8. This script 'unexports' the GPIO pins. It declares the puins no longer in use and so the Odroid no longer devote power or memory towrds them. This is called when the 'SYS_off' command is recieved.
+
+-
+
+9. This script powers off the DHM system. It turns off all GPIO ports and shuts down the Odroid.
