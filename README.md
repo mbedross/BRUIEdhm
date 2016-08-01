@@ -6,13 +6,13 @@ File Desicriptions are as follows:
 
 1. main.py
 2. header.py
-2. exportGPIO.py
-3. turnOnLaser.py
-4. turnOffLaser.py
-5. newSample.py
-6. tempReading
-7. unexportGPIO.py
-8. powerOff.py
+3. exportGPIO.py
+4. turnOnLaser.py
+5. turnOffLaser.py
+6. newSample.py
+7. tempReading
+8. unexportGPIO.py
+9. powerOff.py
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
@@ -26,10 +26,24 @@ e. 'DHM_newSample' runs the fluidic pump to cycle in a new sample into the DHM
 f. 'DHM_auto' Runs the DHM on a preprogramed cycle (fixed framrate and camera time)
 g. 'SYS_off' turns the system off
 
-After establishing a UDP connection with BRUIE, it will wait for any of the above commands and execute them as necessary.
+After establishing a UDP connection with BRUIE, it will 'export' all necessary GPIO pins then wait for any of the above commands and execute them as necessary.
 
 -
   
 2. This script establishes consistant naming between scripts. Declares global variables that are used throughout the OS
 
-3. 
+-
+
+3. This script 'exports' the GPIO pins on the Odroid. This means that it declare which pins are going to be used, assigns names and declares them as outputs. It also initializes the ADC pin in order to take temperature measurements.
+
+-
+
+4. Turns on the laser by using the GPIO pin on the Odroid to switch a relay, giving the laser power via 12Vdc power supply. This script is called when the 'DHM_on' command is received.
+
+-
+
+5. Deenergizes the relay that powers the laser thus turning it off
+
+-
+
+6. 
