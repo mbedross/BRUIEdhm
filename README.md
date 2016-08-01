@@ -42,8 +42,11 @@ After establishing a UDP connection with BRUIE, it will 'export' all necessary G
 
 -
 
-5. Deenergizes the relay that powers the laser thus turning it off
+5. Deenergizes the relay that powers the laser thus turning it off. This script os called when the 'DHM_off' command is received.
 
 -
 
-6. 
+6. This script runs the fluidic pump for 15 seconds in order to cycle in new sample into the sample chamber. This script is called when the 'DHM_newSample' command is received, and when the 'DHM_on' command is received in order to prime the sample chamber and prepare it for DAQ.
+
+-
+
