@@ -18,13 +18,17 @@ File Desicriptions are as follows:
 
 1. This is the main wrapper function that calls all other subroutines. It establishes a UDP connection with BRUIE and waits for commands. The command list and actions are as follows:
 
-  a. 'DHM_on' turns the laser on and prepares the system for DAQ
-  b. 'DHM_off' turns the laser off
-  c. 'DHM_record xx' Acquires data for xx seconds
-  d. 'DHM_status' requests diagnostic information from the DHM (laser status, temperature, etc)
-  e. 'DHM_newSample' runs the fluidic pump to cycle in a new sample into the DHM
-  f. 'DHM_auto' Runs the DHM on a preprogramed cycle (fixed framrate and camera time)
-  g. 'SYS_off' turns the system off
+a. 'DHM_on' turns the laser on and prepares the system for DAQ
+b. 'DHM_off' turns the laser off
+c. 'DHM_record xx' Acquires data for xx seconds
+d. 'DHM_status' requests diagnostic information from the DHM (laser status, temperature, etc)
+e. 'DHM_newSample' runs the fluidic pump to cycle in a new sample into the DHM
+f. 'DHM_auto' Runs the DHM on a preprogramed cycle (fixed framrate and camera time)
+g. 'SYS_off' turns the system off
+
+After establishing a UDP connection with BRUIE, it will wait for any of the above commands and execute them as necessary.
+
+-
   
 2. This script establishes consistant naming between scripts. Declares global variables that are used throughout the OS
 
